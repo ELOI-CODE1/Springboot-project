@@ -13,6 +13,7 @@
                 <th>Sector</th>
                 <th>Type</th>
                 <th>Price</th>
+                <th>Action</th>
             </tr>
             <tr th:each="product : ${products}">
                 <td th:text="${product.id}"></td>
@@ -21,7 +22,9 @@
                 <td th:text="${product.sector}"></td>
                 <td th:text="${product.type}"></td>
                 <td th:text="${product.price}"></td>
-
+                <td>
+                    <a th:href="@{/products/delete/{id}(id=${product.id})}">Delete</a>
+                </td>
             </tr>
         </table>
         <br>

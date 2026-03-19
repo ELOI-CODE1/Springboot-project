@@ -11,6 +11,7 @@ import com.elocode.h2.Entity.Product;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -38,6 +39,11 @@ public class ProductController {
     public String saveProduct(@ModelAttribute Product product){
         productRepository.save(product);
         return"redirect:/products";
+    }
+    @GetMapping("/products/delete/{id}")
+    public String deleteProduct(@PathVariable Integer id){
+        productRepository.deleteById(id);
+        return "redirect:/products";
     }
     
 }
