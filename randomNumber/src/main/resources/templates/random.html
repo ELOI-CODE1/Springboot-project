@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Random Number</title>
+        <style>
+            h1{
+                text-align: center;
+                padding-top: 20px;
+                color: aqua;
+            }
+            p{
+                text-align: center;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>NUMBER GUESSING GAME</h1>
+        <p>Think of number between 1 and 100. <br> You have 5 chance to guess number correctly.</p>
+        <p>Please select the difficulty level</p>
+        <ol>
+            <li>Easy (10 chances)</li>
+            <li>Medium (5 chances)</li>
+            <li>Hard (3 chances)</li>
+        </ol>
+        <form action="random" method="post">
+            <input type="text" name="difficulty" placeholder="Enter your choice" required>
+        </form>
+        <p>Great! You have selected the Medium difficulty level.</p>
+        <p>Lets start the game!</p>
+        <form action="guess" method="post">
+            <input type="number" name="guessed" placeholder="Enter in your guess" required>
+            <button type="submit">Send</button>
+        </form>
+        <div>
+            <span th:text="|${number}|">0</span>
+        </div>
+    </body>
+</html>
