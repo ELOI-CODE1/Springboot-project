@@ -17,15 +17,14 @@ public class RandomController {
     public String randomWeb(){
         return"random";
     }
-    @PostMapping("/random")
-    public String choiceDifficulty(@RequestParam("difficulity") int choice){
+    @PostMapping("/page")
+    public void choiceDifficulty(@RequestParam("difficulty") int choice, Model model){
         if (choice == 1 ) {
-            return "easy";  
+            model.addAttribute("difficultyChoosen","Easy");  
         }else if (choice == 2) {
-            return "medium";
-            
+            model.addAttribute("difficultyChoosen","Medium");
         }else{
-            return "hard";
+            model.addAttribute("difficultyChoosen","Hard");
         }
 
     }

@@ -3,15 +3,6 @@
     <head>
         <title>Random Number</title>
         <style>
-            h1{
-                text-align: center;
-                padding-top: 20px;
-                color: aqua;
-            }
-            p{
-                text-align: center;
-            }
-
 
         </style>
     </head>
@@ -24,17 +15,9 @@
             <li>Medium (5 chances)</li>
             <li>Hard (3 chances)</li>
         </ol>
-        <form action="random" method="post">
-            <input type="text" name="difficulty" placeholder="Enter your choice" required>
+        <form action="page" method="post">
+            <input type="number" name="difficulty" placeholder="Enter your choice" required>
+            <button type="submit">CHOOSE</button>
         </form>
-        <p>Great! You have selected the Medium difficulty level.</p>
-        <p>Lets start the game!</p>
-        <form action="guess" method="post">
-            <input type="number" name="guessed" placeholder="Enter in your guess" required>
-            <button type="submit">Send</button>
-        </form>
-        <div>
-            <span th:text="|${number}|">0</span>
-        </div>
     </body>
 </html>

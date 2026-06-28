@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>PLay</title>
+    </head>
+    <body>
+        <h1>START TO PLAY</h1>
+        
+        <div th:if="${difficultyChoosen != null}">
+            <p>Great! You have selected the <strong><span th:text="${difficultyChoosen}"></span> </strong>difficulty level.</p>
+        </div>
+        <p>Lets start the game!</p>
+        <form action="guess" method="post">
+            <input type="number" name="guessed" placeholder="Enter in your guess" required>
+            <button type="submit">Send</button>
+        </form>
+        <div>
+            
+            <strong>The number u guessed is <span th:text="|${number}|">0</span></strong>
+            
+        </div>
+    </body>
+</html>
