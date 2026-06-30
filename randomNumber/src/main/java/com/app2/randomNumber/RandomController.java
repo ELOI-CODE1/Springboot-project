@@ -1,7 +1,6 @@
 package com.app2.randomNumber;
 
 import java.util.Random;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,11 +27,11 @@ public class RandomController {
         }
 
     }
-    @PostMapping("/guess")
+    @PostMapping("/page")
     public String guessedNumber(@RequestParam("guessed") int guessedNum, Model model){
-        int randomNumber=random.nextInt(100);
+        int randomNumber = random.nextInt(100);
         if (guessedNum != randomNumber) {
-            guessedNum=randomNumber;
+            guessedNum = randomNumber;
             model.addAttribute("number", guessedNum);
             return "random";
         }
@@ -41,5 +40,4 @@ public class RandomController {
             return "random";
         }
     }
-    
 }
