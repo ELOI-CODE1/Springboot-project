@@ -16,7 +16,7 @@ public class RandomController {
     public String randomWeb(){
         return"random";
     }
-    @PostMapping("/page")
+    @PostMapping("/geuess")
     public void choiceDifficulty(@RequestParam("difficulty") int choice, Model model){
         if (choice == 1 ) {
             model.addAttribute("difficultyChoosen","Easy");  
